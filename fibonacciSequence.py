@@ -8,6 +8,14 @@ Write a function that computes the list of the first 100 Fibonacci numbers. By d
 
 def fibonacciSequence(length):
 	a, b = 0, 1
+	sequence = []
 	for i in range(length):
-		
-	pass
+		sequence.append(a)
+		c = b
+		b = a + b
+		a = c # What b used to be
+	return sequence
+	
+if __name__ == '__main__':
+	print("Here are the first 100 Fibonacci numbers:")
+	print(fibonacciSequence(100))
