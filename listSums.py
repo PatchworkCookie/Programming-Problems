@@ -20,11 +20,13 @@ def sumViaFor(numList):
 def sumViaWhile(numList):
 	logging.debug('Start of sumViaWhile(%s)' % (str(numList)))
 	sum = 0
+	while len(numList) != 0:
+		sum += numList.pop()
 	return sum
 	
 def sumViaRecursion(numList):
 	logging.debug('Start of sumViaFor(%s)' % (str(numList)))
-	sum = 0
+	sum = numList.pop()
+	if len(numList) != 0:
+		sum += sumViaRecursion(numList)
 	return sum
-	
-#print(sumViaFor([1,2,3]))
