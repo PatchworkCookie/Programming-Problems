@@ -7,4 +7,7 @@ Write a function that computes the list of the first 100 Fibonacci numbers. By d
 '''
 
 def fibonacciSequence(length):
+	a, b = 0, 1
+	for i in range(length):
+		
 	pass
