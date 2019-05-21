@@ -9,7 +9,8 @@ def test_(input, exOutput):
 	result = 0
 	assert result == exOutput
 
-@pytest.mark.parametrize('input, exOutput',[([1,2],[2,1]), ([5,49,7,3,6],[7,6,5,49,3])])
+@pytest.mark.parametrize('input, exOutput',[([1,2],[2,1]), ([5,49,7,3,6],[7,6,5,49,3]),
+([234,342,123,534,6455,123], [6455,534,342,234,123,123])])
 def test_sortBySignificance(input, exOutput):
 	result = listToLargeNumber.sortBySignificance(input)
 	assert result == exOutput
@@ -26,4 +27,3 @@ def test_sortBySignificance_ValueError(input):
 def test_testBiggerSum(input1, input2, exOutput):
 	result = listToLargeNumber.testBiggerSum(input1, input2)
 	assert result == exOutput
-	assert 0
