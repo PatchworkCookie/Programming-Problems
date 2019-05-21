@@ -7,11 +7,14 @@ Write a function that given a list of non negative integers, arranges them such 
 
 9000
 3
+211
+21121
 21111
 124
 121
 12111
 1200
+1
 '''
 
 import logging
@@ -26,6 +29,8 @@ def sortBySignificance(listOfNums):
 		if num < 0:
 			raise ValueError("Value '%s' must be non-negative" % (str(num)))
 		#Check if num should be ahead of the current sorted num
+		#TODO: This loop is fucked
+		'''
 		for sortedNum in sorted:
 			logging.debug("Checking num '%s' against sortedNum '%s'" % (str(num), str(sortedNum)))
 			logging.debug("Sorted: %s" % (str(sorted)))
@@ -38,13 +43,30 @@ def sortBySignificance(listOfNums):
 					i += 1
 				#else: continue
 				'''
-				'''
 		#Insert num into the sorted list
 		sorted.insert(0,num)
 		logging.debug("Sorted list is now: %s" % (str(sorted)))
 		'''
 		'''
 		pass
+	pass
+
+def testBiggerSum(num1, num2):
+	logging.debug('Start of testBiggerSum(%s, %s)' % (str(num1), str(num2)))
+	sum1 = int(str(num1) + str(num2)) # Concatenate the numbers and convert to int
+	sum2 = int(str(num2) + str(num1))
+	logging.debug('sum1: %s, sum2: %s' % (str(sum1), str(sum2)))
+	if sum1 < sum2: 
+		logging.debug('sum1: %s < sum2: %s' % (str(sum1), str(sum2)))
+		return -1
+	if sum1 > sum2: 
+		logging.debug('sum1: %s > sum2: %s' % (str(sum1), str(sum2)))
+		return 1
+	if sum1 == sum2: 
+		logging.debug('sum1: %s = sum2: %s' % (str(sum1), str(sum2)))
+		return 0
+	
+	
 	pass
 #Convert numbers to strings
 #Concatenate strings

@@ -18,3 +18,12 @@ def test_sortBySignificance(input, exOutput):
 def test_sortBySignificance_ValueError(input):
 	with pytest.raises(ValueError):
 		listToLargeNumber.sortBySignificance(input)
+		
+@pytest.mark.parametrize('input1, input2, exOutput',
+[(21121,21111,1), 
+(3,9,-1),
+(124,124,0)])
+def test_testBiggerSum(input1, input2, exOutput):
+	result = listToLargeNumber.testBiggerSum(input1, input2)
+	assert result == exOutput
+	assert 0
