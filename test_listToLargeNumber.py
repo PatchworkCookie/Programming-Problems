@@ -3,10 +3,9 @@ Tests for listToLargeNumber.py
 '''
 import pytest, listToLargeNumber
 
-@pytest.mark.skip()
-@pytest.mark.parametrize('input, exOutput',[([1,2],21), ([49,7,3,6],76493)])
-def test_(input, exOutput):
-	result = 0
+@pytest.mark.parametrize('input, exOutput',[([1,2],21), ([49,7,3,6],76493), ([50, 2, 1, 9], 95021)])
+def test_largestNumber(input, exOutput):
+	result = listToLargeNumber.largestNumber(input)
 	assert result == exOutput
 
 @pytest.mark.parametrize('input, exOutput',[([1,2],[2,1]), ([5,49,7,3,6],[7,6,5,49,3]),

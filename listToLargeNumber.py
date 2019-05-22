@@ -22,6 +22,9 @@ import logging
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
+def largestNumber(listOfNumbers):
+	pass
+
 #Sort numbers by most significant digits
 def sortBySignificance(listOfNums):
 	logging.debug('Starting sortBySignificance(%s)' % (str(listOfNums)))
