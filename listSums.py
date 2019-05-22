@@ -9,6 +9,7 @@ Write three functions that compute the sum of the numbers in a given list using 
 import logging
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.disable(logging.INFO)
 
 def sumViaFor(numList):
 	logging.debug('Start of sumViaFor(%s)' % (str(numList)))

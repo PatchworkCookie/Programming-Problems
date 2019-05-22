@@ -21,9 +21,16 @@ import functools
 import logging
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.disable(logging.INFO)
 
 def largestNumber(listOfNumbers):
-	pass
+	logging.debug('Staring largestNumber(%s)' % (str(listOfNumbers)))
+	sortedList = sortBySignificance(listOfNumbers)
+	largest = ''
+	for number in sortedList:
+		logging.debug('Adding "%s" to "%s"' % (str(number), str(largest)))
+		largest += str(number)
+	return int(largest)
 
 #Sort numbers by most significant digits
 def sortBySignificance(listOfNums):
