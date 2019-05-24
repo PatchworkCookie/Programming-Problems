@@ -5,7 +5,24 @@ https://www.shiftedup.com/2015/05/07/five-programming-problems-every-software-en
 Problem 5
 Write a program that outputs all possibilities to put + or - or nothing between the numbers 1, 2, ..., 9 (in this order) such that the result is always 100. For example: 1 + 2 + 34 – 5 + 67 – 8 + 9 = 100.
 '''
+'''
+How can I solve this...
 
+Brute-force: Attempt every combination of possibilities, save only those that succeed
+	Pros: Probably the simplest way
+	Cons: It may require a LOT of calculations/time
+	
+Strategic: Start from one side of the list of numbers and try to keep the running total as close to 100 as possible
+	Pros:
+	Cons: This seems like it will be way more complicated
+'''
+
+import itertools
 import logging
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
+# Go through every combination of +/-/None
+# Take the list of numbers and stitch it together into either a number or equation
+# find the result of the equation
+# Save the successful combinations
