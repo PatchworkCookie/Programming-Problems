@@ -14,7 +14,8 @@ Brute-force: Attempt every combination of possibilities, save only those that su
 	
 Strategic: Start from one side of the list of numbers and try to keep the running total as close to 100 as possible
 	Pros:
-	Cons: This seems like it will be way more complicated
+	Cons: This seems like it will be WAY more complicated, 
+		Could end up missing stuff if I'm not careful
 '''
 
 import itertools
@@ -23,6 +24,25 @@ import logging
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # Go through every combination of +/-/None
+# itertools.product('None-+')
+def magicSum(listOfNumbers, targetSum):
+	listOfSolutions = []
+	return listOfSolutions
+
 # Take the list of numbers and stitch it together into either a number or equation
+def implementOperators(listOfNumbers, operatorTuple):
+	if len(listOfNumbers) != len(operatorTuple)+1:
+		raise ValueError('The number of operators must be one less than the number of digits.')
+	outputString = ''
+	for i in range(len(operatorTuple)):
+		outputString += str(listOfNumbers[i])
+		if operatorTuple[i] != '_': # Ignore '_', append other symbols
+			outputString += operatorTuple[i]
+	outputString += str(listOfNumbers[-1])
+	return outputString
+
 # find the result of the equation
+#eval(string)
+
 # Save the successful combinations
+
