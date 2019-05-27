@@ -22,11 +22,20 @@ import itertools
 import logging
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.disable(logging.INFO)
 
 # Go through every combination of +/-/None
 # itertools.product('None-+')
 def magicSum(listOfNumbers, targetSum):
+	logging.debug('Start of magicSum(%s, %s)' % (str(listOfNumbers), str(targetSum)))
 	listOfSolutions = []
+	operatorCombinations = itertools.product('_-+', repeat=len(listOfNumbers)-1)
+	for combo in operatorCombinations:
+		equation = implementOperators(listOfNumbers, combo)
+		# find the result of the equation
+		if eval(equation) == targetSum:
+			# Save the successful combinations
+			listOfSolutions.append(equation)
 	return listOfSolutions
 
 # Take the list of numbers and stitch it together into either a number or equation
@@ -41,8 +50,10 @@ def implementOperators(listOfNumbers, operatorTuple):
 	outputString += str(listOfNumbers[-1])
 	return outputString
 
-# find the result of the equation
-#eval(string)
+if __name__ == '__main__':
+	print('These are the equations that will add up to 100:')
+	list = magicSum([1,2,3,4,5,6,7,8,9],100)
+	for equation in list:
+		print(equation)
 
-# Save the successful combinations
 
